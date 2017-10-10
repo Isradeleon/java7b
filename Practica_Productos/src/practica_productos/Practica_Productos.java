@@ -5,9 +5,6 @@
  */
 package practica_productos;
 
-import java.util.Date;
-import java.util.Random;
-
 /**
  *
  * @author Isra
@@ -20,14 +17,7 @@ public class Practica_Productos {
     public static void main(String[] args) {
         // TODO code application logic here
         //GUI.main(args);
-        Random rand = new Random();
-        Date d = new Date();
-        
-        Date d2 = new Date();
-        d.setTime(rand.longs(0,d2.getTime()).findFirst().getAsLong());
-        System.out.println(d.toString());
-        System.out.println(String.valueOf(d2.toString()));
-        
+        GUI.main(args);
     }
     
 }

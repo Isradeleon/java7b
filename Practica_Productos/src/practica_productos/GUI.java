@@ -5,12 +5,16 @@
  */
 package practica_productos;
 
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Isra
  */
 public class GUI extends javax.swing.JFrame {
     int cantidad_p;
+    DefaultTableModel model = new DefaultTableModel();
     /**
      * Creates new form GUI
      */
@@ -27,20 +31,17 @@ public class GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        TFrescos = new javax.swing.JTable();
-        BtnFrescos = new javax.swing.JButton();
-        TextFrescos = new javax.swing.JTextField();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable = new javax.swing.JTable();
+        jTextField1 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Lista productos");
         setResizable(false);
 
-        TFrescos.setModel(new javax.swing.table.DefaultTableModel(
+        jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -48,65 +49,16 @@ public class GUI extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(TFrescos);
+        jScrollPane2.setViewportView(jTable);
 
-        BtnFrescos.setText("Generar");
+        jButton1.setText("GENERAR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 890, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(TextFrescos, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(BtnFrescos, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(8, 8, 8)))
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TextFrescos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BtnFrescos))
-                .addContainerGap(46, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Frescos", jPanel1);
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 910, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 379, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Refrigerados", jPanel2);
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 910, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 379, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Congelados", jPanel3);
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "FRESCOS", "CONGELADOS", "REFRIGERADOS" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -114,20 +66,135 @@ public class GUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 69, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(691, 691, 691)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void resetTable(){
+        model.setRowCount(0);
+        model.setColumnCount(0);
+        model.addColumn("LOTE");
+        model.addColumn("FABRICANTE");
+        model.addColumn("PRODUCTO");
+        model.addColumn("PUBLICO");
+        model.addColumn("MAYOREO");
+        model.addColumn("CADUCIDAD");
+    }
+    
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        try{
+            this.cantidad_p=Integer.valueOf( this.jTextField1.getText() );
+            switch(String.valueOf(this.jComboBox1.getSelectedItem())){
+                case "FRESCOS":
+                    this.resetTable();
+                    
+                    model.addColumn("ENVASADO");
+                    model.addColumn("TRANSPORTE");
+                    model.addColumn("ORIGEN");
+                    model.addColumn("MAYOREO IVA");
+                    model.addColumn("Prox. Caducir");
+                    
+                    Ops.generarFrescos(cantidad_p);
+                    for(ProductoFresco pr : Ops.LISTA_FRESCOS){
+                        model.addRow(new Object[]{
+                            String.valueOf(pr.getLote()),
+                            pr.getFabricante(),
+                            pr.getNombre(),
+                            Ops.DEC_FORMAT.format(pr.getCosto_p()),
+                            Ops.DEC_FORMAT.format(pr.getCosto_m()),
+                            Ops.DATE_FORMAT.format(pr.getCaducidad()),
+                            Ops.DATE_FORMAT.format(pr.getEnvasado()),
+                            pr.getOrigen(),pr.getTransporte(),
+                            Ops.DEC_FORMAT.format(pr.costoIVA()),
+                            pr.proximaCaducidad() ? "A CADUCAR" : "-"
+                        });
+                    }
+                    this.jTable.setModel(this.model);
+                    break;
+                    
+                case "CONGELADOS":
+                    this.resetTable();
+                    model.addColumn("TEMP REC");
+                    model.addColumn("TEMP ACTUAL");
+                    model.addColumn("ALERTA");
+                    
+                    Ops.generarCongelados(cantidad_p);
+                    for(ProductoCongelado pr : Ops.LISTA_CONGELADOS){
+                        model.addRow(new Object[]{
+                            String.valueOf(pr.getLote()),
+                            pr.getFabricante(),
+                            pr.getNombre(),
+                            Ops.DEC_FORMAT.format(pr.getCosto_p()),
+                            Ops.DEC_FORMAT.format(pr.getCosto_m()),
+                            Ops.DATE_FORMAT.format(pr.getCaducidad()),
+                            "-"+String.valueOf(pr.getTemp_r())+"°",
+                            "-"+String.valueOf(pr.getTemp_actual())+"°",
+                            pr.inadecuada()?"ALERTA TEMP":"-"
+                        });
+                    }
+                    
+                    this.jTable.setModel(model);
+                    break;
+                    
+                case "REFRIGERADOS":
+                    this.resetTable();
+                    model.addColumn("CODIGO");
+                    model.addColumn("ALMACENADO");
+                    model.addColumn("DIAS REFRIGERADO");
+                    model.addColumn("IMP EXP");
+                    model.addColumn("MAYOREO IVA");
+                    
+                    Ops.generarRefrigerados(cantidad_p);
+                    for(ProductoRefrigerado pr : Ops.LISTA_REFRIGERADOS){
+                        model.addRow(new Object[]{
+                            String.valueOf(pr.getLote()),
+                            pr.getFabricante(),
+                            pr.getNombre(),
+                            Ops.DEC_FORMAT.format(pr.getCosto_p()),
+                            Ops.DEC_FORMAT.format(pr.getCosto_m()),
+                            Ops.DATE_FORMAT.format(pr.getCaducidad()),
+                            String.valueOf(pr.getCod_organismo()),
+                            Ops.DATE_FORMAT.format(pr.getAlmacenado()),
+                            String.valueOf(pr.diasRefrigerado()),
+                            pr.getImp_exp(),
+                            Ops.DEC_FORMAT.format(pr.mayoreoIVA()/20)+" USD"
+                        });
+                    }
+                    this.jTable.setModel(model);
+                    break;
+            }
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, "Indica una cantidad válida!");
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -165,13 +232,10 @@ public class GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnFrescos;
-    private javax.swing.JTable TFrescos;
-    private javax.swing.JTextField TextFrescos;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

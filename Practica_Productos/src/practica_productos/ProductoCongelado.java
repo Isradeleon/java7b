@@ -10,6 +10,22 @@ package practica_productos;
  * @author Isra
  */
 public class ProductoCongelado extends Producto {
-    private String temp_r, temp_actual;
+    private final int temp_r, temp_actual;
+
+    public ProductoCongelado(int temp_r, int temp_actual) {
+        this.temp_r = temp_r;
+        this.temp_actual = temp_actual;
+    }
     
+    public boolean inadecuada(){
+        return this.temp_r != this.temp_actual;
+    }
+
+    public int getTemp_r() {
+        return temp_r;
+    }
+
+    public int getTemp_actual() {
+        return temp_actual;
+    }
 }
