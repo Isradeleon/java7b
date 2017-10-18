@@ -15,8 +15,6 @@ public class Practica_Productos {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        //GUI.main(args);
         GUI.main(args);
     }
     
